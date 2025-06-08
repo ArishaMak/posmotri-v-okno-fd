@@ -15,12 +15,12 @@
       <section class="result">
         <div class="result__video-container">
           <video src="" controls class="result__video" poster=""></video>
+          <div> </div>
         </div>
         <form class="search-form">
           <fieldset class="search-form__fieldset">
             <h2 class="search-form__fieldset-title">Город</h2>
             <label class="search-form__label">
-              <span class="search-form__label-text visually-hidden">Город</span>
               <input
                 type="text"
                 placeholder="Санкт Петербург, например"
@@ -81,8 +81,11 @@
       </section>
     </main>
 
-    <!-- ТЕМПЛЕЙТЫ -->
-
+    <!-- ТЕМПЛЕЙТЫ
+    - используется для хранения HTML-структур, которые не отображаются сразу
+    при загрузке страницы, но могут быть клонированы и добавлены
+    в DOM с помощью JavaScript в нужный момент. -->
+    <!--Шаблон пункта списка с карточкой видео; показывает загрузку-->
     <template class="preloader-template">
       <div class="preloader">
         <div class="preloader-chasing-squares">
@@ -93,7 +96,7 @@
         </div>
       </div>
     </template>
-
+    <!--Шаблон прелоадера; добавляет результаты-->
     <template class="cards-list-item-template">
       <li class="content__list-item">
         <a href="#0" class="content__card-link">
@@ -107,10 +110,11 @@
         </a>
       </li>
     </template>
+    <!--Шаблон кнопки «Показать ещё»; загружает еще видео-->
     <template class="more-button-template">
       <button class="button more-button">Показать еще</button>
     </template>
-
+    <!--Шаблон блока с ошибкой; нет видео по запросу-->
     <template class="error-template">
       <div class="error">
         <h2 class="error__title">Из этого города нет видео :(</h2>
